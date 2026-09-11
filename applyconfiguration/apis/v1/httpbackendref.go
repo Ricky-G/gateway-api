@@ -88,7 +88,7 @@ type HTTPBackendRefApplyConfiguration struct {
 	// Support for Kubernetes Service appProtocol: Extended
 	//
 	// Support for BackendTLSPolicy: Extended
-	BackendRefApplyConfiguration `json:",inline"`
+	BackendRefApplyConfiguration `json:""`
 	// Filters defined at this level should be executed if and only if the
 	// request is being forwarded to the backend defined here.
 	//

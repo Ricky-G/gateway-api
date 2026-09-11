@@ -25,11 +25,11 @@ import (
 // Interface provides access to all the informers in this group version.
 type Interface interface {
 	// XBackends returns a XBackendInformer.
-	XBackends() XBackendInformer
+	XBackends() TypedXBackendInformer
 	// XBackendTrafficPolicies returns a XBackendTrafficPolicyInformer.
-	XBackendTrafficPolicies() XBackendTrafficPolicyInformer
+	XBackendTrafficPolicies() TypedXBackendTrafficPolicyInformer
 	// XMeshes returns a XMeshInformer.
-	XMeshes() XMeshInformer
+	XMeshes() TypedXMeshInformer
 }
 
 type version struct {
@@ -43,17 +43,17 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 	return &version{factory: f, namespace: namespace, tweakListOptions: tweakListOptions}
 }
 
-// XBackends returns a XBackendInformer.
-func (v *version) XBackends() XBackendInformer {
+// XBackends returns a TypedXBackendInformer.
+func (v *version) XBackends() TypedXBackendInformer {
 	return &xBackendInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
-// XBackendTrafficPolicies returns a XBackendTrafficPolicyInformer.
-func (v *version) XBackendTrafficPolicies() XBackendTrafficPolicyInformer {
+// XBackendTrafficPolicies returns a TypedXBackendTrafficPolicyInformer.
+func (v *version) XBackendTrafficPolicies() TypedXBackendTrafficPolicyInformer {
 	return &xBackendTrafficPolicyInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
-// XMeshes returns a XMeshInformer.
-func (v *version) XMeshes() XMeshInformer {
+// XMeshes returns a TypedXMeshInformer.
+func (v *version) XMeshes() TypedXMeshInformer {
 	return &xMeshInformer{factory: v.factory, tweakListOptions: v.tweakListOptions}
 }

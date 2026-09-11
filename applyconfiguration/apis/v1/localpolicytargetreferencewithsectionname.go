@@ -35,7 +35,7 @@ import (
 // to SectionName are actually needed. In all other cases,
 // LocalPolicyTargetReference should be used.
 type LocalPolicyTargetReferenceWithSectionNameApplyConfiguration struct {
-	LocalPolicyTargetReferenceApplyConfiguration `json:",inline"`
+	LocalPolicyTargetReferenceApplyConfiguration `json:""`
 	// SectionName is the name of a section within the target resource. When
 	// unspecified, this targetRef targets the entire resource. In the following
 	// resources, SectionName is interpreted as the following:

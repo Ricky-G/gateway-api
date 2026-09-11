@@ -32,7 +32,7 @@ import (
 //
 // XMesh defines mesh-wide characteristics of a GAMMA-compliant service mesh.
 type XMeshApplyConfiguration struct {
-	v1.TypeMetaApplyConfiguration    `json:",inline"`
+	v1.TypeMetaApplyConfiguration    `json:""`
 	*v1.ObjectMetaApplyConfiguration `json:"metadata,omitempty"`
 	// Spec defines the desired state of XMesh.
 	Spec *MeshSpecApplyConfiguration `json:"spec,omitempty"`

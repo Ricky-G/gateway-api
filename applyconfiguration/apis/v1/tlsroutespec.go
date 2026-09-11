@@ -30,7 +30,7 @@ import (
 // Core: The listener CAN be of type Passthrough
 // Extended: The listener CAN be of type Terminate
 type TLSRouteSpecApplyConfiguration struct {
-	CommonRouteSpecApplyConfiguration `json:",inline"`
+	CommonRouteSpecApplyConfiguration `json:""`
 	// Hostnames defines a set of SNI hostnames that should match against the
 	// SNI attribute of TLS ClientHello message in TLS handshake. This matches
 	// the RFC 1123 definition of a hostname with 2 notable exceptions:
